@@ -1,0 +1,11 @@
+{
+  "name": "hiyori-worker",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "wrangler": "3.20.0"
+  },
+  "scripts": {
+    "deploy": "wrangler deploy"
+  }
+}

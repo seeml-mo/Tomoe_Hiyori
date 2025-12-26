@@ -1,0 +1,9 @@
+name = "hiyori-comments"
+main = "cloudflare-worker.js"
+compatibility_date = "2024-01-01"
+
+# D1 数据库配置
+[[d1_databases]]
+binding = "DB"
+database_name = "tomoe_hiyori_db"
+database_id = "427770b1-1884-4dc7-a260-d77822caffc2"

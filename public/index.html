@@ -1,0 +1,355 @@
+<!-- I declare that the lab work here submitted is original
+except for source material explicitly acknowledged,
+and that the same or closely related material has not been
+previously submitted for another course.
+I also acknowledge that I am aware of University policy and
+regulations on honesty in academic work, and of the disciplinary
+guidelines and procedures applicable to breaches of such
+policy and regulations, as contained in the website.
+University Guideline on Academic Honesty:
+https://www.cuhk.edu.hk/policy/academichonesty/
+Student Name : PAN, Huangyu
+Student ID : 1155211012
+Class/Section : ESTR2106
+Date : 2025/10/23 -->
+
+<!DOCTYPE html>
+<html sytle="font-size: 16px;">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>iihiyori_sunshine</title>
+  </head>
+  <script src="comment.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./src/ts_test.js"></script>   
+
+  <body>
+      <p class="bottom_link"> Click to know more about
+        <a href="https://ensemble-stars.jp/characters/tomoe_hiyori"> Tomoe Hiyori</a> 
+      </p>
+      <div class="spotlight-container" id="spotlight-area">
+          <h5>Spotlight</h5>
+          <p>The spotlights you add will be shown below.</p>
+      </div>
+    <main>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg sidebar">
+          <img class="avatar" src="./images/Hiyori_Tomoe_4.png" />
+              <ul>
+                <li><a href="#home" aria-label="Home">
+                <!-- Home icon (SVG) -->
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                HOME
+                </a></li>
+                <li><a href="#about" aria-label="About">
+                <!-- User icon (SVG) -->
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/></svg>
+                ABOUT
+                </a></li>
+                <li><a href="#" id="show-tasks-btn" aria-label="Show">
+                <!-- Eye icon (SVG) -->
+                <svg class="eye-open" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 6a9.77 9.77 0 0 1 8.485 4.485 9.77 9.77 0 0 1 0 8.485A9.77 9.77 0 0 1 12 22a9.77 9.77 0 0 1-8.485-4.485 9.77 9.77 0 0 1 0-8.485A9.77 9.77 0 0 1 12 6zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
+                SHOW
+                </a></li>
+                <li><a href="#comment" aria-label="Contact">
+                <!-- Mail icon (SVG) -->
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                COMMENT
+                </a></li>
+              </ul>
+        </nav>
+        <div id="show" class="bar" style="display:none;">
+        </div>
+        <article class="content"></article>
+      </div>
+    </main>
+    <script>
+    (function() {
+      const navLinks = document.querySelectorAll('nav.sidebar ul li a');
+      const contentArea = document.querySelector('article.content');
+
+      const routes = {
+        home: `
+          <header>
+            <h1>Homepage</h1>
+            <p>      Welcome to the Garden of EDEN</p>
+          </header>
+          <section>
+
+            <div class="about-content-wrapper">
+            <div class="row">  <!-- add Bootstrap row -->
+            <div class="col-md-8">  
+                <div class="about-text-content">
+
+                        <div class="character-quote-wrapper">
+                  <blockquote>
+                      <h5>I'm Hiyori Tomoe from Eden and Eve at COSMIC PRODUCTION! Well, there's no way you don't know who I am...♪ Bringing dazzling smiles and love to all my fans is my greatest happiness and a given as an idol. I promise to provide anyone who comes to see me with the best day ever. Yes, yes, that's a Good Hiyori☆</h5>
+                  </blockquote>
+                  <cite class="character-quote-audio character-quote-audio-self">
+                    <aside>
+                      <span class="audio-button character-audio">
+                          <span class="mw-default-size">
+                              <audio src="./images/voices/Hiyori_Tomoe_Voice_Sample_1_ES.ogg" width="180" style="max-width: 100%; width: 180px;" controls>
+                                  Your browser does not support the audio element.
+                              </audio>
+                          </span>
+                      </span>
+                    </aside>
+                       <span class="character-audio-name">Hiyori</span>
+                    <span>
+                        <img src="./images/Hiyori_Tomoe_4.png" alt="Hiyori Tomoe" />
+                    </span>
+                  </cite>
+              </div>
+                        <div class="character-quote-wrapper">
+                <blockquote>
+                    <h5>Ohii-san's introduction, huh. Ohii-san and I met at the idol training school, Reimei Academy, and he's the one who picked me up and saved me from rotting away in a garbage dump. He's free-spirited and prideful, but if it weren't for him, I wouldn't be here... when I think about it, his bits of selfishness can be kinda cute. Haha, saying that might make him angry at me though♪</h5>
+                </blockquote>
+                <cite class="character-quote-audio character-quote-audio-friend">
+                  <aside>  
+                    <span class="audio-button character-audio">
+                        <span class="mw-default-size">
+                            <audio src="./images/voices/Jun_Sazanami_Voice_Sample_2_ES.ogg" width="180" style="max-width: 100%; width: 180px;" controls>
+                                Your browser does not support the audio element.
+                            </audio>
+                        </span>
+                    </span>
+                  </aside>
+                    <span class="character-audio-name"><a href="https://ensemble-stars.jp/characters/sazanami_jun">Jun</a></span>
+                    <span>
+                        <img src="./images/Jun_Sazanami_4.png" alt="Jun Sazanami" />
+                    </span>
+                </cite>
+            </div>
+          </div>
+        </div>
+
+<div class="col-md-4"> 
+<div class="image-sidebar">
+    <div class="image-tabs">
+  <div class="image-tabs">
+    <div class="tab-scroll-container">
+
+    <button class="scroll-btn scroll-left" onclick="scrollTabs(-200)">&lt;</button>
+    <div class="tab-headers" onscroll="updateTabArrows()">
+    <button class="tab-header active" data-tab="current" onclick="switchTab('current')">Current</button>
+    <button class="tab-header" data-tab="casual1" onclick="switchTab('casual1')">Casual 1</button>
+    <button class="tab-header" data-tab="casual2" onclick="switchTab('casual2')">Casual 2</button>
+    <button class="tab-header" data-tab="casual3" onclick="switchTab('casual3')">Casual 3</button>
+    <button class="tab-header" data-tab="casual4" onclick="switchTab('casual4')">Casual 4</button>
+    <button class="tab-header" data-tab="childhood" onclick="switchTab('childhood')">Childhood</button>
+    <button class="tab-header" data-tab="bkubstars" onclick="switchTab('bkubstars')">Bkubstars</button>
+
+
+</div>
+<button class="scroll-btn scroll-right" onclick="scrollTabs(200)">&gt;</button>
+
+  </div>
+    
+    <!-- tab content -->
+    <div class="tab-contents">
+        <!-- Current -->
+        <div class="tab-content active" id="current">
+            <figure class="pi-item pi-image">
+                <img src="./images/Hiyori_Tomoe_4.png" class="image-thumbnail" alt="Current" />
+            </figure>
+        </div>
+        
+        <!-- Casual 1 -->
+        <div class="tab-content" id="casual1">
+            <figure class="pi-item pi-image">
+                <img src="./images/(The_Lively_Room)_Hiyori_Tomoe_Full_Render_Bloomed.png" class="image-thumbnail" alt="Casual 1" />
+            </figure>
+        </div>
+        
+        <!-- Casual 2 -->
+        <div class="tab-content" id="casual2">
+            <figure class="pi-item pi-image">
+                <img src="./images/(Balance_Game)_Hiyori_Tomoe_Full_Render.png" class="image-thumbnail" alt="Casual 2" />
+            </figure>
+        </div>
+        
+        <!-- Casual 3 -->
+        <div class="tab-content" id="casual3">
+            <figure class="pi-item pi-image">
+                <img src="./images/(Swept Droplet) Hiyori Tomoe Full Render.png" class="image-thumbnail" alt="Casual 3" />
+            </figure>
+        </div>
+        
+        <!-- Casual 4 -->
+        <div class="tab-content" id="casual4">
+            <figure class="pi-item pi-image">
+                <img src="./images/Hiyori Tomoe Casual 2 (Autumn-Winter) Outfit.png" class="image-thumbnail" alt="Casual 4" />
+            </figure>
+        </div>
+        
+        <!-- Child -->
+        <div class="tab-content" id="childhood">
+            <figure class="pi-item pi-image">
+                <img src="./images/(The Teller of Mythos) Hiyori Tomoe Full Render.png" class="image-thumbnail" alt="Childhood" />
+            </figure>
+        </div>
+        
+        <!-- Bkubstars -->
+        <div class="tab-content" id="bkubstars">
+            <figure class="pi-item pi-image">
+                <img src="./images/Hiyori Tomoe Bkubstars.png" class="image-thumbnail" alt="Bkubstars" />
+            </figure>
+        </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+          </section>`,
+        about: `
+          <header>
+            <h1>About Us</h1>
+            <p>Good hiyori!!!</p>
+          </header>
+          <section class="about-section ">
+            <h3>Idol Career</h3>
+          
+    <table class="agency-unit-table">
+      <thead>
+        <tr>
+          <th>Agency</th>
+          <th class="divider-column"></th>
+          <th>Unit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <img src="./images/COSMIC_PRODUCTION_Logo.webp" alt="COSMIC PRODUCTION" />
+          </td>
+          <td class="divider-column"></td>
+          <td>
+            <div class="unit-cell">
+              <img src="./images/Eden_ES_Logo.webp" alt="Eden" />
+              <div class="unit-divider"></div>
+              <img src="./images/Eve_logo_cropped.webp" alt="Eve" />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+          <p>Tomoe Hiyori works as one half of Eve alongside Jun Sazanami. While his personality is bright and sociable, he is good at pulling others into his pace. He may have a frivolous side to him, but he believes in saturating his methods of communication with love. With a clear and sweet singing voice, Hiyori's performances are elegant and beautiful. Hiyori is a member of Eden at COSMIC PRODUCTION. His purpose in life is to become someone who anyone may love, one who can spread smiles and love all over the world.</p>
+          <img src="./images/Eve_Unit_Render.png" width="400" height="auto"  style="margin-left:30px;"/>
+            <video width="320" height="240" controls muted style="float: right; margin-left: 20px; margin-right: 20px;">
+              <source src="./images/video/sunlit_smile.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <p>A unit that traps you with a sweet whisper. A former star of fine and a new beast that crawled up, begin their performance. With Adam, they form Eden. Their theme color is lime green. Hiyori made his "Ensemble Stars!" game debut in the company of Jun Sazanami, presenting to audiences as Eve for the first time on July 7, 2017. His unit (alongside Adam and Eden as a whole) was one of the last official units to be announced during the game's lifespan.</p>
+
+          <img src="./images/UnitEden.png" width="400" height="auto" style="margin-left:30px;" />
+            <video width="320" height="240" controls muted style="float: right; margin-left: 20px; margin-right: 20px;">
+              <source src="./images/video/the_genesis.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <p>Eden is a noble and vigorous unit led by <a href="https://ensemble-stars.jp/characters/ran_nagisa">Ran Nagisa</a>. Eden members deliver heart-winning speeches during fan services, accompanied by opulent and dramatic performances. Eden mainly participates in media work that exposes their dazzling appearance, including guests in talk shows, ambassadors for advertising campaigns, fashion models, actors in movies and theater plays, etc. Their theme color is black. Tomoe Hiyori's age grants him the title of Eden's eldest member.</p>
+            <p>COCMIC PRODUCTION: Shorted as COS PRO, COSMIC PRODUCTION is operated by Reimei Academy and Shuetsu Academy, which target at fostering young talents in entertainment industry. All elite idols cultivated by Reimei Academy will be dispatched to Shuestu Academy, who takes over everything since then. This production line ensures the quality of idols and gradually stabilizes COS PRO's position in the industry. However, impacted by SS, COS PRO is a little stagnant now. The slogan of COS PRO is "Reaching the Crescendo in Entertainment".</p>
+              <p>* Any cooperation inquiries, please contact Deputy Director
+                <a href=:"https://ensemble-stars.jp/characters/saegusa_ibara">Saegusa Ibara</a>
+              </p>
+          </section>`,
+        comment: `
+          <header>
+            <h1>Comments</h1>
+            <p>Leave your comments below.</p>
+          </header>
+          <section>
+            <p>Comment section content.</p>
+            <body>
+          <div class="container-grid-container">
+            <div id="comments"> 
+              <div id="c1001" class="d-flex"> <!-- flex layout -->
+              </div>
+            </div>
+            <form>
+              <div class="mb-3">
+                <label for="new-email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="new-email" placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="new-comment" class="form-label">Comment</label>
+                <textarea class="form-control" id="new-comment" rows="3" placeholder="Ensemble Stars!!" oninput="autoFillComment(this)" required></textarea>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="new-color" id="new-color-red" value="red">
+                  <label class="form-check-label" for="new-color-red">Red</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="new-color" id="new-color-green" value="green">
+                  <label class="form-check-label" for="new-color-green">Green</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="new-color" id="new-color-yellow" value="yellow">
+                  <label class="form-check-label" for="new-color-yellow">Yellow</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="new-color" id="new-color-blue" value="blue">
+                  <label class="form-check-label" for="new-color-blue">Blue</label>
+              </div>
+              <button type="button" class="btn btn-primary" onclick="savefile();">Add comment</button>
+            </form>
+            <div id="comments-container">
+              <!-- New comments will be shown here -->
+            </div>
+          </section>
+          <footer id="duration-timer-footer"></footer>`
+      };
+
+      let durationTimerInstance = null;
+
+      function render() {
+        let hash = location.hash.slice(1) || 'home'; 
+        if (!routes[hash]) {
+          hash = 'home'; 
+        }
+
+        contentArea.innerHTML = routes[hash];
+
+      setTimeout(() => {
+        initAudioPlayers(); 
+      }, 100);
+
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === '#' + hash) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+
+           if (hash === 'comment') {
+                setTimeout(() => {
+                  loadAndDisplayComments();
+                }, 100);
+              const footer = document.getElementById('duration-timer-footer');
+              if (footer) {
+                if (durationTimerInstance) {
+                  durationTimerInstance.stop();
+                }
+                durationTimerInstance = new DurationTimer(footer);
+                durationTimerInstance.start();
+              }
+            } else {
+              if (durationTimerInstance) {
+                durationTimerInstance.stop();
+                durationTimerInstance = null;
+              }
+            }
+        }
+
+      window.addEventListener('hashchange', render);
+
+      render();
+    })();
+    </script>
+  </body>
+</html>
