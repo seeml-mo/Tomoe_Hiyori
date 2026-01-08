@@ -1,5 +1,5 @@
 // ========== 配置 ==========
-//const USE_CLOUDFLARE = false; // 先设为 false，使用本地存储
+const USE_CLOUDFLARE = true; // 先设为 false，使用本地存储
 const CLOUDFLARE_WORKER_URL = 'https://hiyori-comments.tomoe-hiyori.workers.dev';
 const LOCAL_STORAGE_KEY = 'hiyori_comments_v2';
 // ==========================
@@ -117,6 +117,7 @@ function savefile() {
     .catch(error => {
         console.error('保存失败:', error);
         alert('留言保存失败，请稍后重试');
+        processform();
     });
     // ========== 修改结束 ==========
 
